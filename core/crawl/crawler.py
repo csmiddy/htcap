@@ -150,7 +150,7 @@ class Crawler:
 	def kill_threads(self, threads):
 		Shared.th_condition.acquire()
 		for th in threads:
-			if th.isAlive():
+			if th.is_alive():
 				th.exit = True
 				th.pause = False
 				if th.probe_executor and th.probe_executor.cmd:
